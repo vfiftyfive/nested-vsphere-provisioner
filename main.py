@@ -6,27 +6,7 @@ import sys
 import os
 import time
 
-# user = 'cpaggen'
-# password = 'ins3965!'
-# name_list = ['student-01-vesx-01', 'student-01-vesx-02', 'student-01-vesx-03']
-# host = '10.48.58.109'
-# port = '443'
-# compute_host = '10.48.58.110'
-# datastore = 'Nimble-Lun-11'
-# vmfolder = 'vesxi'
-# mgmt_network = 'Backbone'
-# network = 'nested-VTEP'
-# iso = '[Nimble-Lun-11] Sources/VMware-VMvisor-Installer-6.0.0.update03-5050593.x86_64.iso'
-# mem = 16384
-# vcpu = 4
-# guestid = 'vmkernel5Guest'
-# vmx_version = 'vmx-10'
-# disk_size = 40
-
-trailer = ">>>>>>>  "
-
 def distribute_resources(consumer, resource):
-
     j = 0
     res = [[] for _ in range(resource)]
 
@@ -40,7 +20,6 @@ def distribute_resources(consumer, resource):
 
 
 def main():
-
     si = utils.svc_login(host=os.environ['HOST'], user=os.environ['USER'], port='443', password=os.environ['PASSWORD'])
 
     name_list = os.environ['VMNAME_LIST'].split(' ')
@@ -80,7 +59,6 @@ def main():
 
             except Exception, e:
                 print "\nException caught:{}".format(e)
-
 
 if __name__ == '__main__':
     sys.exit(main())
